@@ -1,0 +1,57 @@
+<!-- Login
+Login:<br>
+User Name: <input type='text' [(ngModel)]="userName"><br />
+Password:  <input type='text' [(ngModel)]="password"><br />
+<input type="submit" (click)="login(userName,password)"><br />
+
+{{token}}
+
+
+
+
+<div *ngIf = "status">
+    <input type="submit" value="Users" (click)="getUserData()"><br />
+    <div *ngFor="let user of users">
+       
+        <li>{{user}}</li>
+        
+      </div>
+</div>
+
+<br /><br />
+
+Register:<br>
+User Name:<input type='text' [(ngModel)]="registerUserName"><br />
+Password:<input type='text' [(ngModel)]="registerPassword"><br />
+<input type="submit" (click)="register(registerUserName,registerPassword)"><br />
+{{info}}
+
+<br>
+
+Get Public Data.
+<input type="submit" (click)="getPublicData()"><br />
+<div *ngFor="let item of publicData">
+    {{item.email}}
+</div>
+<br /><br />
+
+Get WishList.
+<input type="submit" (click)="getWishList()"><br />
+<div *ngFor="let good of goods">
+    {{good.goodsName}}
+</div>
+
+
+Get Private Data.
+<input type="submit" (click)="getPrivateData()"><br />
+<div *ngFor="let item of privateData">
+    {{item.email}}
+</div>
+<br /><br />
+
+
+<input type="submit" (click)="log_out()" value="log out"><br />
+{{message}} -->
+<!-- <app-header></app-header> -->
+<router-outlet></router-outlet>
+<!-- <app-footer></app-footer> -->

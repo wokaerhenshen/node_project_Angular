@@ -1,0 +1,88 @@
+
+<app-header></app-header>
+  <!-- Get WishList.
+  <input type="submit" (click)="getWishList()"><br />
+  <div *ngFor="let good of goods">
+      {{good.goodsName}}
+  </div> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+ <br>
+  <h1>Boats List</h1>
+
+  <!-- <form ng-submit="" #myForm="ngForm" >
+    <br>Create New Good<br>
+  <br>Good Name  <input type="text" [(ngModel)]="goodsName" name="gn" #gn="ngModel"><br>
+      
+  <button (click)="AddProduct(goodsName)">Add</button>
+
+  </form>
+
+
+ 
+
+  <br>
+  <h3>My selling list</h3>
+  <input type="submit" (click)="ShowSelling()" value="Show"><br>
+  <div *ngFor="let sellinGood of sellinGoods">
+      {{sellinGood.goods_name}}
+  </div> -->
+
+ 
+
+  <!-- <div class="form-group">
+    <form id="uploadForm">
+        Upload Image： <input type="file" name="file" id="my_upload_img" multiple/>
+        <br />
+        <input type="button" value="Upload" (click)="doUpload()" />
+    </form>
+</div> -->
+
+
+
+
+  <div class="container">
+    <div class="col-md-12">
+   
+        <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">BoatName</th>
+          <th class="text-center">BoatLengthInFeet</th>
+          <th class="text-center">BoatYear</th>
+          <th class="text-center">BoatCapacityInPeople</th>
+          <th class="text-center">BoatPictureUrl</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let myboat of myboats">
+
+          <td>{{ myboat.BoatName }}</td>
+          <td>{{ myboat.BoatLengthInFeet }}</td>
+          <td>{{ myboat.BoatYear }}</td>
+          <td>{{ myboat.BoatCapacityInPeople }}</td>
+          <td>{{ myboat.BoatPictureUrl }}</td>
+          <!-- <td>{{ product.price | currency:'USD':true:'1.0-2' }}</td> -->
+        </tr>
+      </tbody>
+    </table>
+
+    <br />
+    <br />  
+     <input type="submit" (click)="log_out()" value="log out" class="btn btn-danger"><br />
+     <br>
+      <app-footer></app-footer>
+    </div>
+  </div>
+  
+
+
+
+  
+
+
+
+
