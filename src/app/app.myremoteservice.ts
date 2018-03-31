@@ -3,7 +3,6 @@ import { Component }      from '@angular/core';
 import { URLSearchParams, QueryEncoder} from '@angular/http';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
-import { Good } from './main-page/good'
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw'; 
@@ -72,6 +71,16 @@ export class MyRemoteService {
         .map(this.extractData) 
         .catch(this.handleError); 
 
+    }
+
+    getBoats(): Observable<Comment[]>{
+        let headers = new Headers({ 'Content-Type': 'application/json' })
+        headers.append( 'Authorization',sessionStorage.getItem('token'))
+        let options = new RequestOptions({ headers: headers })
+        let url = this.site + "boats"
+        return this.http.get(url,options)
+        .map(this.extractData) 
+        .catch(this.handleError)
     }
     
     // Retreival of JSON from .NET is a success.

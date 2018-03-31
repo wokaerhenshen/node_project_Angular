@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import {  MyRemoteService } from '../app.myremoteservice';
-import { Good } from './good'
 import { Boat} from "./boat"
 import { clone } from 'lodash';
 
@@ -13,7 +12,6 @@ import { clone } from 'lodash';
 export class MainPageComponent implements OnInit {
 
   remoteService: MyRemoteService;
-  goods:Good[];
   goodForm:boolean= false
   editGoodForm:boolean = false
   isNewForm :boolean
@@ -22,7 +20,7 @@ export class MainPageComponent implements OnInit {
   sellinGoods:any;
   goodsName :string;
   category:any
-  myboats:Boat[]
+  myboats:any
 
 
   constructor(_remoteService: MyRemoteService,public router:Router) {
@@ -30,15 +28,19 @@ export class MainPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("hi")
-    console.log( sessionStorage.getItem("myData"))
-    this.myboats = JSON.parse(sessionStorage.getItem("myData"));
+      this.remoteService.getBoats().subscribe(
+        data=>
+        this.myboats = data
+      ),
+      error =>{
+        alert(error)
+      }
   }
 
   log_out() {
     // Jwt has no sense of logout on the server so just
     // destroy the token on the client.
-    sessionStorage.setItem('auth_token', null);
+    sessionStorage.setItem('token', null);
     sessionStorage.setItem('myEmail',null);
     sessionStorage.setItem('myData',null);
         // Set our navigation extras object

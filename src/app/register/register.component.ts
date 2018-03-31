@@ -48,6 +48,7 @@ export class RegisterComponent implements OnInit {
                 // Success.
                 data => {
                   console.log(data)
+                  alert("regiter success")
                   // Set our navigation extras object
                   // that passes on our global query params and fragment
                   let navigationExtras: NavigationExtras = {

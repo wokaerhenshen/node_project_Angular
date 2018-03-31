@@ -40,8 +40,9 @@ export class LoginComponent implements OnInit {
           //   alert("There is error with your data")
           //   return
           // }
-            // Store token with session data.
-        sessionStorage.setItem('myData',JSON.stringify(data));
+        // Store token with session data.
+        sessionStorage.setItem('token',data['token']);
+        //sessionStorage.setItem('token',data)
         //window.localStorage.setItem("my")
             
         //console.log(data)
@@ -51,48 +52,11 @@ export class LoginComponent implements OnInit {
             queryParamsHandling: 'preserve',
             preserveFragment: true
           };
-            this.router.navigate(['mainPage'],navigationExtras);
+          this.router.navigate(['mainPage'],navigationExtras);
         },
         // Error.
         error => {
             alert(error)
         })
 }
-
-register(registerUserName,registerPassword){
-
-  let FeedBackObject = {
-    "userName": registerUserName,
-    "password": registerPassword
-}
-
-this.remoteService.postRegister(FeedBackObject).subscribe(
-              // Success.
-              data => {
-
-                console.log(data)
-
-                // Set our navigation extras object
-                // that passes on our global query params and fragment
-                let navigationExtras: NavigationExtras = {
-                  queryParamsHandling: 'preserve',
-                  preserveFragment: true
-                };
-
-
-              this.router.navigate(['mainPage'],navigationExtras);
-
-                      },
-                      // Error.
-                      error => {
-                          alert(error)
-                      }
-
-)
-
-
-
-}
-
-
 }
