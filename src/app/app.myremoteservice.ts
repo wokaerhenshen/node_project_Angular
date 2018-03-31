@@ -30,7 +30,7 @@ export class MyRemoteService {
     loginModel : LoginModel;
     public site:string;
     constructor(private http: Http) { 
-       this.site = "http://localhost:3000/angular/"
+       this.site = "https://polar-brushlands-78269.herokuapp.com/angular/"
     }
 
     // POST - login
