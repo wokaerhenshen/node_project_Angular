@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "D:\\ssd\\new_Karlshop\\wwwroot\\dist",
+      "outDir": "D:\\ssd\\shop_angular_part\\myapp\\dist",
       "assets": [
         "assets",
         "favicon.ico"
