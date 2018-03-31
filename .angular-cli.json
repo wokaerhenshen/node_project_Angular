@@ -6,10 +6,11 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "D:\\ssd\node\\shop_angular_part\\myapp\\dist",
+      "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "web.config"
       ],
       "index": "index.html",
       "main": "main.ts",
